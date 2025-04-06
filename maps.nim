@@ -31,6 +31,6 @@ proc listTiles* (): seq[Tile] =
 proc registerTiles* (tiles_list: seq[Tile], tile_size: int): OrderedTable[string, (int, Tile)] =
   var tile_index = 0
   for tile in tiles_list:
-    # loadSpritesheet(tile_index, tile.image, tile_size, tile_size)
+    loadSpritesheet(tile_index, r"assets\" & tile.image, tile_size, tile_size)
     result[tile.id] = (tile_index, tile)
     tile_index += 1

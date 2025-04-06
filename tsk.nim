@@ -19,20 +19,20 @@ var
 
 proc gameStart() = discard
 proc gameUpdate(dt: float32) = discard
-proc gameDraw() = discard
-  # setSpritesheet(0) # use the tileset spritesheet
-  # setMap(0) # use the map we created
-  # mapDraw(0,0, 16,16, 0,0)
+proc gameDraw() =
+  setSpritesheet(0) # use the tileset spritesheet
+  setMap(0) # use the map we created
+  mapDraw(0,0, 10,10, 0,0)
 
 echo map_list
 echo tile_list
 echo tile_registry
 
-# newMap(0, 10, 10, tile_size, tile_size)
-# setMap(0) # tell nico to use map 0 we just created
-# for y in 0..<10:
-#   for x in 0..<10:
-#     mset(x, y, 0)
+newMap(0, 10, 10, tile_size, tile_size)
+setMap(0) # tell nico to use map 0 we just created
+for y in 0..<10:
+  for x in 0..<10:
+    mset(x, y, 0)
 
 init(org=auth, app=gname)
 nico.createWindow(title=gname, w=128, h=128, scale=4, fullscreen=false)
